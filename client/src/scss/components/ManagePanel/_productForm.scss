@@ -1,0 +1,32 @@
+@import "../../variables";
+
+.input-regulaer-product {
+  display: flex;
+  flex-wrap: wrap;
+
+  .input-item {
+    flex: 1 0 calc(50% - 10px);
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+
+  select.input-item {
+    flex: 1 0 calc(100% - 10px);
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    flex-basis: 100%;
+    margin-top: 10px;
+  }
+}

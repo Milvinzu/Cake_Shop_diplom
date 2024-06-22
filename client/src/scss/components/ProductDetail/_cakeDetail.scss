@@ -1,0 +1,245 @@
+@import "../../variables";
+
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $font-family;
+  background-color: $backgroud;
+  color: $blackTextColor;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .product-detail-img {
+    flex: 1;
+    text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  .product-detail-info {
+    flex: 2;
+    padding: 0 20px;
+
+    h2 {
+      font-size: 2em;
+      color: $orangeTextColor;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("../../../assets/img/ProductDetail/select_arrow_blur.svg");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 10%;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: $backgroudBuyButton;
+      color: $whiteTextColor;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+
+      &:hover {
+        background-color: darken($backgroudBuyButton, 10%);
+      }
+    }
+
+    .flavor-details {
+      margin-top: 20px;
+
+      h3 {
+        font-size: 1.5em;
+        margin: 10px 0;
+        color: $cartOrangeColor;
+      }
+
+      p {
+        font-size: 1em;
+        margin-bottom: 10px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .product-detail {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: auto !important;
+    margin-top: 100px !important;
+
+    .product-detail-img {
+      width: 100%;
+    }
+
+    .product-detail-info {
+      width: 100%;
+      text-align: center;
+      padding: 0;
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 0.9em;
+      }
+
+      label {
+        margin: 6px 0 3px;
+      }
+
+      select {
+        padding: 6px;
+      }
+
+      button {
+        padding: 6px 12px;
+      }
+
+      .flavor-details {
+        h3 {
+          font-size: 1.1em;
+        }
+
+        p {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 100% !important;
+    margin-top: 100px !important;
+
+    .product-detail-img {
+      width: 100%;
+    }
+
+    .product-detail-info {
+      width: 100%;
+      text-align: center;
+      padding: 0;
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 0.9em;
+      }
+
+      label {
+        margin: 6px 0 3px;
+      }
+
+      select {
+        padding: 6px;
+      }
+
+      button {
+        padding: 6px 12px;
+      }
+
+      .flavor-details {
+        h3 {
+          font-size: 1.1em;
+        }
+
+        p {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .product-detail {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: auto;
+    margin-top: 100px !important;
+
+    .product-detail-img {
+      width: 100%;
+    }
+
+    .product-detail-info {
+      width: 100%;
+      text-align: center;
+      padding: 0;
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 0.9em;
+      }
+
+      label {
+        margin: 6px 0 3px;
+      }
+
+      select {
+        padding: 6px;
+      }
+
+      button {
+        padding: 6px 12px;
+      }
+
+      .flavor-details {
+        h3 {
+          font-size: 1.1em;
+        }
+
+        p {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.loading-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.loading-product {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #e6e4e7;
+  border-radius: 20px;
+}

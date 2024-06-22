@@ -1,0 +1,9 @@
+@import "../../variables";
+
+.input_item {
+  margin: 10px;
+}
+label {
+  color: $blackTextColor;
+  text-wrap: nowrap;
+}

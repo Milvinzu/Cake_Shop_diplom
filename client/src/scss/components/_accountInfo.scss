@@ -1,0 +1,146 @@
+@import "../variables";
+
+.account-page {
+  .error-message {
+    color: $error;
+  }
+
+  .success-reg-message {
+    color: $success;
+  }
+
+  .content {
+    display: flex;
+    margin-top: 150px;
+    margin-bottom: 250px;
+    flex-wrap: nowrap;
+    min-height: 600px;
+    justify-content: center;
+    flex-direction: row;
+    .menu {
+      display: flex;
+      flex-direction: column;
+      padding: 0 15px 10px;
+      overflow: hidden;
+      border-radius: 5px;
+      background-color: $accountMenuBackgroudColor;
+      color: $blackTextColor;
+      width: 100%;
+      max-width: 300px;
+      margin-right: 20px;
+      margin-left: 120px;
+      &-btn {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin: 5px 0;
+        padding: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+
+        &.active {
+          background-color: $loginFormBackgroundColor;
+        }
+
+        .icon {
+          padding-right: 10px;
+        }
+      }
+    }
+
+    .account-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 30px;
+      width: 100%;
+
+      &-title {
+        font-size: 26px;
+        font-weight: 800;
+        margin-bottom: 30px;
+      }
+
+      &-controls {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+        margin-top: 15px;
+
+        .account-info-controls-input,
+        .login-form-btn {
+          width: 100%;
+          max-width: 300px;
+          margin: 10px;
+          padding: 15px 20px;
+          border-radius: 30px;
+          border: 1px solid #ccc;
+          font-weight: 400;
+          font-size: 16px;
+        }
+
+        .login-form-btn {
+          background-color: $backgroudBuyButton;
+          color: $whiteTextColor;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .content {
+      flex-wrap: wrap;
+      .menu {
+        width: 50%;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+      }
+
+      .account-info {
+        margin: 20px 0;
+        width: calc(100% - 150px);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+
+      .menu {
+        width: 60%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .account-info {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .menu {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .account-info {
+        width: 100%;
+      }
+    }
+  }
+}

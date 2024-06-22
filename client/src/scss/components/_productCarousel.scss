@@ -1,0 +1,69 @@
+@import "../variables";
+
+.product-carousel-wrapper {
+  max-width: calc(100% - 100px);
+}
+
+.product-carousel-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: $blackTextColor;
+}
+
+.product-carousel-container {
+  display: flex;
+
+  .react-multi-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+
+    .product-item {
+      width: 100% !important;
+    }
+  }
+
+  .product-carousel-item {
+    width: 80%;
+    margin: 0 10px;
+  }
+
+  .react-multi-carousel-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .react-multi-carousel-track {
+    display: flex;
+    align-items: center;
+  }
+
+  .react-multi-carousel-dot-list {
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .product-carousel-container {
+    .product-carousel-item {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .product-carousel-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 464px) {
+  .product-carousel-container {
+    .product-carousel-item {
+      width: 95%;
+    }
+  }
+}

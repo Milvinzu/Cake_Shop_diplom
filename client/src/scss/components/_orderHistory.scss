@@ -1,0 +1,150 @@
+@import "../variables";
+
+.order-history {
+  width: calc(90% - 100px);
+  margin: auto;
+  font-family: $font-family;
+  background-color: $backgroud;
+  padding: 10px;
+}
+
+.order {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: $cartbackgroud;
+  color: $blackTextColor;
+  cursor: pointer;
+}
+
+.order-summaryy {
+  background-color: $orderHeader;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  h3 {
+    flex: 1 1 auto;
+    word-wrap: break-word;
+    margin-right: 10px;
+  }
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.order-details {
+  background-color: $backgroud;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+  p {
+    white-space: pre-wrap;
+  }
+
+  .pay-btn {
+    background-color: $backgroudBuyButton;
+    color: $whiteTextColor;
+    margin-top: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.order-item-info-cake {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.order-item img {
+  width: 75px;
+  height: 75px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  border-radius: 5px;
+}
+
+.order-item div {
+  display: flex;
+  flex-direction: column;
+  text-wrap: wrap;
+  flex-grow: 1;
+}
+
+.order-item div p {
+  margin: 5px 0;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .order-history {
+    width: 95%;
+  }
+
+  .order-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .loading {
+    margin-top: 40%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .order-summaryy {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    h3 {
+      font-size: 18px;
+      text-wrap: balance;
+      word-wrap: break-word;
+    }
+    p {
+      margin: 5px 0;
+    }
+  }
+
+  .order-history {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .order {
+    margin: 5px 0;
+    padding: 5px;
+  }
+
+  .order-item img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .loading {
+    position: relative;
+    margin-top: 20px;
+  }
+}

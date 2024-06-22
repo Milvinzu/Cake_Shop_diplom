@@ -1,0 +1,253 @@
+@import "../variables";
+
+.header {
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: calc(100% - 150px);
+  z-index: 2;
+  .logo {
+    padding-left: 20px;
+    a {
+      img {
+        display: inline-block;
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .nav-button,
+    .dropdown-button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      color: $whiteTextColor;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin-right: 25px;
+      cursor: pointer;
+
+      &:hover {
+        color: lighten($whiteTextColor, 20%);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: $loginFormBackgroundColor;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 28px;
+        a {
+          color: $whiteTextColor;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+
+          &:hover {
+            background-color: $cartOrangeColor;
+            border-radius: 25px;
+          }
+        }
+      }
+
+      &:hover .dropdown-content {
+        display: block;
+      }
+    }
+  }
+
+  .search {
+    display: inline-flex;
+    padding: 0 10px;
+    color: $whiteTextColor;
+    position: relative;
+    margin-left: auto;
+
+    input[type="text"] {
+      background-color: $inputBackgroundColor;
+      color: $whiteTextColor;
+      border-radius: 20px;
+      width: 450px;
+      padding: 5px;
+      border: 1px solid #947854;
+      position: absolute;
+      top: 0;
+      right: 38px;
+
+      &::placeholder {
+        color: $whiteTextColor;
+      }
+    }
+
+    button {
+      background: rgba(0, 0, 0, 0.01);
+      border: none;
+      display: inline-block;
+      width: 31px;
+      height: 31px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .search.open input[type="text"] {
+      width: 450px;
+    }
+
+    .search.open button {
+      transform: translateX(-40px);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    max-width: calc(100% - 100px);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    .logo {
+      padding-left: 20px;
+      img {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .navigation {
+      margin-left: 0;
+      margin-top: 20px;
+      flex-wrap: wrap;
+
+      .nav-button,
+      .dropdown-button {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .search {
+      margin-left: 0;
+      margin-top: 20px;
+
+      input[type="text"] {
+        width: 35vh;
+        margin-right: 40px;
+        margin-top: 8px;
+        right: 0;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 10px;
+    width: 93%;
+    .logo {
+      width: 10%;
+      padding-left: 0;
+      img {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+
+    .navigation {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 80%;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      .nav-button,
+      .dropdown-button {
+        font-size: 14px;
+      }
+
+      .dropdown {
+        font-size: 14px;
+        .dropdown-content {
+          position: absolute;
+          width: 100%;
+          box-shadow: none;
+          border-radius: 0;
+          background-color: $loginFormBackgroundColor;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          a {
+            width: 100%;
+            padding: 10px 20px;
+            &:hover {
+              background-color: $cartOrangeColor;
+              border-radius: 0;
+            }
+          }
+          &.open {
+            display: flex;
+          }
+        }
+
+        &:hover .dropdown-content {
+          display: block;
+        }
+      }
+    }
+
+    .search {
+      width: 10%;
+      margin-top: 10px;
+      input[type="text"] {
+        width: 29vh;
+        margin-right: 30px;
+        right: 0;
+        height: 35px;
+      }
+
+      button {
+        margin-top: 5px;
+        margin-left: auto;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

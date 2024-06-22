@@ -1,0 +1,152 @@
+@import "../variables";
+
+.order_page {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  height: 100vh;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.order_form,
+.order_summary {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: $cartbackgroud;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.order_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+
+  .order_form_item {
+    width: 100%;
+  }
+}
+
+.order_form_contacts,
+.order_form_delivery,
+.order_form_payment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 15px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: $orangeTextColor;
+  }
+}
+
+.saved_addresses_link {
+  align-self: flex-end;
+  font-size: 14px;
+  color: #1e2a78;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .form_group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: $blackTextColor;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: $inputBackgroundColor;
+      color: $whiteTextColor;
+
+      &.order_form_item {
+        width: 100%;
+      }
+    }
+
+    .error_message {
+      color: $error;
+      font-size: 12px;
+    }
+
+    &.error input {
+      border-color: $error;
+    }
+  }
+
+  .date_picker {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.submit_order_button {
+  padding: 10px 20px;
+  background-color: $backgroudBuyButton;
+  color: $whiteTextColor;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: darken($backgroudBuyButton, 10%);
+  }
+}
+
+.order_summary {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 50%;
+
+  @media (max-width: 768px) {
+    order: 2;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: $orangeTextColor;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

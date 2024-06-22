@@ -1,0 +1,243 @@
+@import "../variables";
+
+.titel-form {
+  margin-top: 150px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.create_cake_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $loginFormBackgroundColor;
+  padding: 80px;
+  border-radius: 10px;
+  height: auto;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .error-message {
+    font-weight: 500;
+    color: $error;
+  }
+
+  &_contact,
+  &_delivery,
+  &_design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .input,
+    .input_large {
+      width: 100%;
+      max-width: 250px;
+      margin: 10px 0;
+    }
+  }
+
+  &_delivery {
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+      width: 100%;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        color: $blackTextColor;
+        background-color: $inputBackgroundColor;
+        border-radius: 25px;
+        padding: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        width: 100%;
+        max-width: 250px;
+
+        &.selected {
+          background-color: $orangeTextColor;
+          color: $whiteTextColor;
+          border: 2px solid $orangeTextColor;
+        }
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        .custom-radio {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border: 2px solid $blackTextColor;
+          border-radius: 50%;
+          margin-right: 10px;
+          position: relative;
+          transition: all 0.3s ease;
+
+          &:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: transparent;
+            margin: 5px;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      align-items: center;
+      max-width: 250px;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        color: $blackTextColor;
+        border-radius: 25px;
+        padding: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+
+        &.selected {
+          background-color: $orangeTextColor;
+          color: $whiteTextColor;
+          border: 2px solid $orangeTextColor;
+        }
+
+        input[type="radio"] {
+          display: none;
+        }
+      }
+
+      input {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  &_design {
+    .custom-file-upload {
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 6px 12px;
+      background-color: $inputBackgroundColor;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .input-file-upload {
+      display: none;
+    }
+  }
+}
+
+.submit-button,
+.how-it-works-button {
+  display: block;
+  font-size: 24px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: $orangeTextColor;
+  color: $whiteTextColor;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+
+  &:hover {
+    background-color: darken($orangeTextColor, 10%);
+  }
+}
+
+.how-it-works-button {
+  font-size: 14px;
+  margin: 10px auto;
+  padding: 10px;
+  color: $blackTextColor;
+  background-color: $inputBackgroundColor;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+
+  &:hover {
+    background-color: darken($inputBackgroundColor, 10%);
+  }
+}
+
+.thx-form {
+  margin-top: 200px;
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 1500px) {
+  .create_cake_form {
+    flex-direction: column;
+    padding: 20px;
+    width: calc(70% - 120px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .create_cake_form {
+    flex-direction: column;
+    width: calc(80% - 120px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .create_cake_form {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .submit-button,
+  .how-it-works-button {
+    font-size: 20px;
+    padding: 8px 16px;
+  }
+
+  .titel-form {
+    margin-top: 160px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .create_cake_form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .submit-button,
+  .how-it-works-button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .titel-form {
+    margin-top: 100px;
+    margin-bottom: 10px;
+  }
+}
